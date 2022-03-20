@@ -3,6 +3,7 @@ import React from "react";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import tw from "twrnc";
+import { Icon } from "react-native-elements";
 
 const data = [
   {
@@ -28,14 +29,20 @@ const NavOptions = () => {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <TouchableOpacity
-          style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-100 m-2 w-40 h-45 rounded-md`}
+          style={tw`p-2 pl-6 pr-6 pb-8 pt-4 bg-gray-100 m-2 w-40  rounded-md`}
         >
           <View>
             <Image
               style={{ width: 120, height: 120, resizeMode: "contain" }}
               source={item.image}
             />
-            <Text style={tw`pl-6 text-lg`}>{item.title}</Text>
+            <Text style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
+            <Icon
+              style={tw`mt-4 p-2 bg-black rounded-full w-10`}
+              name="arrowright"
+              color="white"
+              type="antdesign"
+            />
           </View>
         </TouchableOpacity>
       )}
